@@ -1,4 +1,4 @@
-module protos-forum
+module github.com/keshvan/protos-forum
 
 go 1.23.6
 
