@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "github.com/keshvan/protos-forum/user;userpb";
+
+service UserService {
+    rpc GetUsernames (GetUsernamesRequest) returns (GetUsernamesResponse);
+}
+
+message GetUsernamesRequest {
+    repeated int64 user_ids = 1;
+}
+
+message GetUsernamesResponse {
+    map<int64, string> usernames = 1;
+}
