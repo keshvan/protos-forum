@@ -6,6 +6,7 @@ option go_package = "github.com/keshvan/protos-forum/user;userpb";
 
 service UserService {
     rpc GetUsernames (GetUsernamesRequest) returns (GetUsernamesResponse);
+    rpc GetUsername (GetUsernameRequest) returns (GetUsernameResponse);
 }
 
 message GetUsernamesRequest {
@@ -14,4 +15,13 @@ message GetUsernamesRequest {
 
 message GetUsernamesResponse {
     map<int64, string> usernames = 1;
+}
+
+message GetUsernameRequest {
+    int64 user_id = 1;
+}
+
+message GetUsernameResponse {
+    int64 user_id = 1;
+    string username = 2;
 }
